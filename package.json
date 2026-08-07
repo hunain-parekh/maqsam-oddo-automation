@@ -1,0 +1,14 @@
+{
+  "name": "maqsam-odoo-automation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node src/sync-maqsam-odoo.js",
+    "sync:dry-run": "SYNC_DRY_RUN=true node src/sync-maqsam-odoo.js",
+    "check": "node --check src/sync-maqsam-odoo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

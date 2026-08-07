@@ -1,0 +1,63 @@
+{
+  "name": "Maqsam to Odoo CRM - Hourly",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "2e51d7dc-7f36-4b72-8fa9-7ca3944f8c3e",
+      "name": "Every Hour",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "command": "cd /Users/macbookpro/Desktop/Code/maqsam-oddo-automation && node src/sync-maqsam-odoo.js"
+      },
+      "id": "44797cf2-0f4f-4558-99fd-83e98395ca10",
+      "name": "Run Maqsam Odoo Sync",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        560,
+        240
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Every Hour": {
+      "main": [
+        [
+          {
+            "node": "Run Maqsam Odoo Sync",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Karachi"
+  },
+  "versionId": "174f2435-32ef-43bc-88ec-98d4f272237d",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
